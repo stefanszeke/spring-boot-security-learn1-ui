@@ -19,6 +19,14 @@ export class HeaderComponent  {
     this.userDetails$ = this.userService.userDetails$;
   }
 
+  ngOnInit(): void {
+    if(window.sessionStorage.getItem('userdetails')){
+      console.log("User is logged in");
+      this.user = JSON.parse(window.sessionStorage.getItem('userdetails')!);
+      this.userService.setUserDetails(this.user);
+    }
+  }
+
   getHomeLink() {
     let link = ['/home'];
     this.userDetails$.subscribe((user) => {
