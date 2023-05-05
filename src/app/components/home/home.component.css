@@ -4031,11 +4031,33 @@ p.counter {
 /* about */
 
 .serve-grid {
+  border-radius: 5px;
     background: #fff;
     padding: 4em 1em;
-    -webkit-box-shadow: 5px 7px 23px 0px rgba(58, 52, 82, 0.16);
-    -moz-box-shadow: 5px 7px 23px 0px rgba(58, 52, 82, 0.16);
-    box-shadow: 5px 7px 23px 0px rgba(58, 52, 82, 0.16);
+    -webkit-box-shadow: 1px 1px 10px 1px rgba(58, 52, 82, 0.16);
+    -moz-box-shadow: 1px 1px 10px 1px rgba(58, 52, 82, 0.16);
+    box-shadow: 1px 1px 10px 1px rgba(58, 52, 82, 0.16);
+    transition: 80ms;
+    cursor: pointer;
+    user-select: none;
+}
+
+.serve-grid:hover {
+  transform: scale(1.02);
+  -webkit-box-shadow: 1px 1px 20px 4px rgba(58, 52, 82, 0.2);
+  -moz-box-shadow: 1px 1px 20px 4px rgba(58, 52, 82, 0.2);
+  box-shadow: 1px 1px 20px 4px rgba(58, 52, 82, 0.2);
+}
+
+.serve-grid .fa, .serve-grid p {
+  transition: 80ms;
+}
+
+.serve-grid:hover .fa {
+  transform: scale(1.8);
+}
+.serve-grid:hover p {
+  transform: scale(1.2);
 }
 
 .serve-gd1 {
