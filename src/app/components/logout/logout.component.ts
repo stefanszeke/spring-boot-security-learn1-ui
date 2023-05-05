@@ -3,6 +3,7 @@ import { LoginService } from 'src/app/services/login/login.service';
 import { Router } from '@angular/router';
 import { User } from 'src/app/model/user.model';
 import { UserService } from 'src/app/services/user.service';
+import { removeCookie } from 'typescript-cookie';
 
 @Component({
   selector: 'app-logout',
@@ -17,6 +18,8 @@ export class LogoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    removeCookie("XSRF-TOKEN");
+    removeCookie("JSESSIONID");
     window.sessionStorage.clear();
     this.userService.setUserDetails(new User());
     this.router.navigate(['/login']);
